@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<Extern href="stdidcmd.h"/>
+	<Extern href="vsshlids.h"/>
+	<Include href="KnownImageIds.vsct"/>
+	<Include href="VSGlobals.vsct"/>
+
+	<Commands package="ChatGPTHelper">
+		<Groups>
+			<Group guid="ChatGPTHelper" id="MyMenuGroup" priority="0x0600">
+				<Parent guid="VSMainMenu" id="Edit"/>
+			</Group>
+		</Groups>
+
+		<!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+		<Buttons>
+			<Button guid="ChatGPTHelper" id="MyCommand" priority="0x0100" type="Button">
+				<Parent guid="ChatGPTHelper" id="MyMenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="Accessibility" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>My Command</ButtonText>
+					<LocCanonicalName>.ChatGPTHelper.MyCommand</LocCanonicalName>
+				</Strings>
+
+			</Button>
+
+		</Buttons>
+
+	</Commands>
+	<KeyBindings>
+		<KeyBinding guid="ChatGPTHelper" id="MyCommand" editor="guidVSStd97" key1="VK_F7" key2="VK_F1" mod1="Control Alt" />
+	</KeyBindings>
+	<Symbols>
+		<GuidSymbol name="ChatGPTHelper" value="{585baace-0978-4f18-acfa-d4ba2df39016}">
+			<IDSymbol name="MyMenuGroup" value="0x0001" />
+			<IDSymbol name="MyCommand" value="0x0100" />
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>
