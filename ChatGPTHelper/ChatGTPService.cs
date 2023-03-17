@@ -16,7 +16,7 @@ namespace ChatGPTHelper
 
         public async Task GetCodeSuggestionAsync(string request, Action<int, CompletionResult> resultHandler)
         {
-            OpenAIAPI api = new OpenAIAPI("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");
+            OpenAIAPI api = new OpenAIAPI("sk-ops");
             // var completions = await _client.Completions.CreateAsync("text-davinci-002", prompt, maxTokens: 50, n: 1, stop: new string[] { "\n" });
 
 

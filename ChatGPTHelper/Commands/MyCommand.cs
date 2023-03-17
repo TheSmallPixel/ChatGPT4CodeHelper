@@ -13,16 +13,9 @@ namespace ChatGPTHelper
         private ChatGTPService _chatGPT4Service;
 
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs commandService)
-        {
-            //_package = package ?? throw new ArgumentNullException(nameof(package));
-            //CommandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
-
+        {   
             _chatGPT4Service = new ChatGTPService();
-
-            //var menuCommandID = new CommandID(new Guid("c264bd94-0a43-4d1d-944a-8e3529b1afec"), 0x0100);
-            //var menuItem = new MenuCommand(Execute, menuCommandID);
-            //commandService.AddCommand(menuItem);                            
-
+           
             firstInteration = true;
             lineLength = 0;
 
@@ -51,10 +44,7 @@ namespace ChatGPTHelper
             }
             var doc = await VS.Documents.GetActiveDocumentViewAsync();
             var selection = doc?.TextView?.Selection.SelectedSpans.FirstOrDefault();
-            //var dte = await _package.GetServiceAsync(typeof(SDTE)) as EnvDTE80.DTE2;
-            //EnvDTE.TextSelection textSelection = dte.ActiveDocument.Selection as EnvDTE.TextSelection;
-            //string currentLineText = textSelection.ActivePoint.CreateEditPoint()
-            //                var selection = doc?.TextView.Selection.SelectedSpans.FirstOrDefault();
+          
             if (!selection.HasValue) return;
 
             string codeSuggestion = string.Empty;
@@ -105,33 +95,12 @@ namespace ChatGPTHelper
                 {
                     await VS.StatusBar.ShowProgressAsync("Receiving chatGPT response", 2, 2);
 
-                    position = positionStart;
+                    position = positionStart;   
 
-                    //Erase current code
                     _ = (docView.TextBuffer?.Replace(
                         new Span(position, docView.TextView.Selection.StreamSelectionSpan.GetText().Length),
                         String.Empty));
-                    //if (commandType == CommandType.Erase)
-                    //{
-                    //    position = positionStart;
 
-                    //    //Erase current code
-                    //    _ = (docView.TextBuffer?.Replace(
-                    //        new Span(position, docView.TextView.Selection.StreamSelectionSpan.GetText().Length),
-                    //        String.Empty));
-                    //}
-                    //else if (commandType == CommandType.InsertBefore)
-                    //{
-                    //    position = positionStart;
-
-                    //    _ = (docView.TextBuffer?.Insert(position, Environment.NewLine));
-                    //}
-                    //else
-                    //{
-                    //    position = positionEnd;
-
-                    //    _ = (docView.TextBuffer?.Insert(position, Environment.NewLine));
-                    //}
 
                     firstInteration = false;
                 }
@@ -155,13 +124,6 @@ namespace ChatGPTHelper
                 throw;
             }
         }
-        //public static async Task InitializeAsync(AsyncPackage package)
-        //{
-        //    await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync(package.DisposalToken);
-
-        //    var commandService = await package.GetServiceAsync(typeof(IMenuCommandService)) as OleMenuCommandService;
-        //    _ = new MyCommand(package, commandService);
-        //}
 
 
     }
