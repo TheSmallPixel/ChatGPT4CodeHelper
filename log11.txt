@@ -1,0 +1,16 @@
+1679050670|TheSmallPixel|A|/.gitignore
+1679050670|TheSmallPixel|A|/LICENSE
+1679050670|TheSmallPixel|A|/README.md
+1679067538|TheSmallPixel|A|/ChatGPTHelper/ChatGPTHelper.csproj
+1679067538|TheSmallPixel|A|/ChatGPTHelper/ChatGPTHelper.sln
+1679067538|TheSmallPixel|A|/ChatGPTHelper/ChatGPTHelperPackage.cs
+1679067538|TheSmallPixel|A|/ChatGPTHelper/ChatGTPService.cs
+1679067538|TheSmallPixel|A|/ChatGPTHelper/Commands/MyCommand.cs
+1679067538|TheSmallPixel|A|/ChatGPTHelper/Properties/AssemblyInfo.cs
+1679067538|TheSmallPixel|A|/ChatGPTHelper/Resources/Icon.png
+1679067538|TheSmallPixel|A|/ChatGPTHelper/VSCommandTable.cs
+1679067538|TheSmallPixel|A|/ChatGPTHelper/VSCommandTable.vsct
+1679067538|TheSmallPixel|A|/ChatGPTHelper/source.extension.cs
+1679067538|TheSmallPixel|A|/ChatGPTHelper/source.extension.vsixmanifest
+1679068123|TheSmallPixel|M|/ChatGPTHelper/ChatGTPService.cs
+1679068123|TheSmallPixel|M|/ChatGPTHelper/Commands/MyCommand.cs
